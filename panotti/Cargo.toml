@@ -8,6 +8,7 @@ clap = { version = "4.5.17", features = ["derive"] }
 cpal = "0.15.3"
 crossterm = { version = "0.28.1", features = ["serde"] }
 faster-whisper-rs = "0.2.0"
+jiff = { version = "0.1.13", features = ["serde"] }
 mlua = { version = "0.9.9", features = ["lua54", "macros", "vendored"] }
 ratatui = { version = "0.28.1", features = ["macros", "serde", "underline-color"] }
 serde = { version = "1.0.210", features = ["derive"] }
