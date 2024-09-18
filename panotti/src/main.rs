@@ -25,6 +25,10 @@ fn run(mut terminal: DefaultTerminal) -> io::Result<()> {
     let mut app = app::App::default();
     update(&mut app, msg::Msg::Started);
     loop {
+        // But of course... you have to decide to quit at some point
+        if app.exit {
+            break;
+        }
         if let event::Event::Key(key) = event::read()? {
             if key.kind == KeyEventKind::Press && key.code == KeyCode::Char('q') {
                 update(&mut app, msg::Msg::Stopping);
