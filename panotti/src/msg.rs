@@ -5,4 +5,5 @@ pub enum Msg {
     Stopping,
     ContextAdded { attributes: Vec<Attribute> },
     ContextRemoved { attributes: Vec<Attribute> },
+    ClearMessages,
 }
