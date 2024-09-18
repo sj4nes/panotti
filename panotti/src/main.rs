@@ -18,6 +18,8 @@ mod nodebug;
 
 use nodebug::NoDebug;
 
+const APP_NAME: &str = "panotti";
+
 #[tokio::main]
 async fn main() -> io::Result<()> {
     let mut terminal = ratatui::init();
@@ -78,7 +80,7 @@ fn update(model: &mut app::App, msg: msg::Msg) -> Option<msg::Msg> {
 
 fn view(terminal: &mut DefaultTerminal, _app: &app::App) -> io::Result<()> {
     terminal.draw(|frame| {
-        let greeting = Paragraph::new("Hello Ratatui! (press 'q' to quit)")
+        let greeting = Paragraph::new(format!("{name} (press 'q' to quit)", name = APP_NAME))
             .white()
             .on_blue();
         frame.render_widget(greeting, frame.area());
