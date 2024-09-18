@@ -46,6 +46,10 @@ fn run(mut terminal: DefaultTerminal) -> io::Result<()> {
             if key.kind == KeyEventKind::Press && key.code == KeyCode::Char('q') {
                 update(&mut app, msg::Msg::Stopping);
                 continue;
+            } 
+            if key.kind == KeyEventKind::Press && key.code == KeyCode::Char('*') {
+                update(&mut app, msg::Msg::ClearMessages);
+                continue;
             }
         }
     }
