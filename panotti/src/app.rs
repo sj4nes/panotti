@@ -33,6 +33,7 @@ pub struct App {
     pub current_context: Context,
     pub messages: Vec<String>,
     pub audio_host: Option<NoDebug<cpal::Host>>,
+    pub transcriber: bool,
     pub mode: Mode,
     pub exit: bool,
 }
@@ -42,6 +43,7 @@ impl Default for App {
             current_context: Context::default(),
             audio_host: None,
             mode: Mode::Normal,
+            transcriber: false,
             messages: Vec::new(),
             exit: false,
         }

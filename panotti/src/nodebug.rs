@@ -28,4 +28,3 @@ impl<T> std::ops::DerefMut for NoDebug<T> {
         &mut self.inner
     }
 }
-
